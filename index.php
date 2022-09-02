@@ -4,31 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+    <title>Challange 3</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <main>
-        <h1 class="text-3xl font-bold underline">
-            Hello world!
-        </h1>
-        <?php 
-            $opts = array(
-                'http'=>array(
-                'method'=>"GET",
-                'header'=>'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'
-                )
-            );
-            
-            $context = stream_context_create($opts);
-
-            $url = "http://hp-api.herokuapp.com/api/characters/students";
-            $json = file_get_contents($url, false, $context);
-            $data = json_decode($json);
-
-            var_dump($data);
-
-        ?>
+      <form method="POST" class="container mx-auto" action="find.php" enctype="multipart/form-data">
+        <p class="uppercase text-xl mt-12">Enter name of personage: </p>   
+        <div class="flex mt-2 align-middle"> 
+          <label class="flex-1 relative block">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"><!-- ... --></svg>
+            </span> 
+            <input name="find" class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search..." type="text" name="search"/>
+          </label> 
+          <button type="submit" class="bg-black text-white ml-4 p-4 pt-2 pb-2 rounded-[12px]">Search for result</button>
+        </div>
+      </form>
 
     </main>
 	<script src="index.js"></script>
