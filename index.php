@@ -22,7 +22,9 @@
           <button type="submit" class="bg-black text-white ml-4 p-4 pt-2 pb-2 rounded-[12px]">Search for result</button>
         </div>
       </form>
-
+      <div class="container mx-auto">
+        <a href="/show.php" class="text-blue-600 visited:text-purple-600 target:shadow-lg text-xl">Show all from database</a>
+      </div>
     </main>
 	<script src="index.js"></script>
   </body>
